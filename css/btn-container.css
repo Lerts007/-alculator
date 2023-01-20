@@ -1,0 +1,124 @@
+.calculator {
+  width: 423px;
+  height: 423px;
+
+  border: 2px solid #595b82;
+}
+
+.btn {
+  margin: 2px;
+
+  font-size: 20px;
+
+  color: #ff4c2b;
+  background: #0a1f32;
+  border: 1px solid #595b82;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  background: #344756;
+}
+
+.btnContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 50px);
+  grid-template-areas:
+    "a1 a2 a3 a4 a5 a6"
+    "b1 b2 b3 b4 b5 b6"
+    "c1 c2 c3 c4 c5 c6"
+    "d1 d d d4 d5 d6";
+}
+
+.btn-addtion {
+  grid-area: d5;
+}
+
+.btn-substraction {
+  grid-area: c5;
+}
+
+.btn-multiplication {
+  grid-area: b5;
+}
+
+.btn-multiplication {
+  grid-area: a5;
+}
+
+.btn-equality {
+  grid-area: d6;
+}
+
+.btn-cos {
+  grid-area: b1;
+}
+
+.btn-sin {
+  grid-area: c1;
+}
+
+.btn-tg {
+  grid-area: d1;
+}
+
+.btn-x2 {
+  grid-area: b6;
+}
+
+.btn-xy {
+  grid-area: c6;
+}
+
+.btn-bracketRight {
+  grid-area: a6;
+}
+
+.btn-bracketLeft {
+  grid-area: a1;
+}
+
+.btn-dot {
+  grid-area: d4;
+}
+
+.btn-0 {
+  grid-area: d;
+}
+
+.btn-1 {
+  grid-area: c2;
+}
+
+.btn-2 {
+  grid-area: c3;
+}
+
+.btn-3 {
+  grid-area: c4;
+}
+
+.btn-4 {
+  grid-area: b2;
+}
+
+.btn-5 {
+  grid-area: b3;
+}
+
+.btn-6 {
+  grid-area: b4;
+}
+
+.btn-7 {
+  grid-area: a2;
+}
+
+.btn-8 {
+  grid-area: a3;
+}
+
+.btn-9 {
+  grid-area: a4;
+}

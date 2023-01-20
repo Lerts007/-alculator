@@ -4,18 +4,14 @@
 
   box-sizing: border-box;
 }
-
+html,
+body {
+  height: 100%;
+}
 body {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: rgb(220, 220, 220);
-}
-
-.calculator {
-  width: 423px;
-  height: 423px;
-
-  border: 8px solid #c3d1ac;
+  background-color: #000218;
 }
