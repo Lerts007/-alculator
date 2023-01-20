@@ -1,8 +1,12 @@
-.calculator {
-  width: 423px;
-  height: 423px;
-
-  border: 2px solid #595b82;
+.btnContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 50px);
+  grid-template-areas:
+    "a1 a2 a3 a4 a5 a6"
+    "b1 b2 b3 b4 b5 b6"
+    "c1 c2 c3 c4 c5 c6"
+    "d1 d d d4 d5 d6";
 }
 
 .btn {
@@ -18,17 +22,6 @@
 
 .btn:hover {
   background: #344756;
-}
-
-.btnContainer {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 50px);
-  grid-template-areas:
-    "a1 a2 a3 a4 a5 a6"
-    "b1 b2 b3 b4 b5 b6"
-    "c1 c2 c3 c4 c5 c6"
-    "d1 d d d4 d5 d6";
 }
 
 .btn-addtion {

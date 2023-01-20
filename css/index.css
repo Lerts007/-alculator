@@ -15,3 +15,10 @@ body {
 
   background-color: #000218;
 }
+
+.calculator {
+  width: 423px;
+  height: 423px;
+
+  border: 2px solid #595b82;
+}
