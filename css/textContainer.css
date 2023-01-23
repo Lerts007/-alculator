@@ -1,0 +1,34 @@
+.textContainer {
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.history {
+  width: 100%;
+  height: 100%;
+}
+#text,
+#newFormula {
+  width: 100%;
+  height: 25px;
+
+  margin-bottom: 5px;
+
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0);
+}
+#text {
+  border-bottom: 1px solid grey;
+
+  color: #ff4c2b;
+
+  text-align: right;
+}
+
+#newFormula {
+  border-top: 1px solid grey;
+}
