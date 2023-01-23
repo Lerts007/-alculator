@@ -10,33 +10,37 @@
     <div class="calculator">
       <div class="textContainer">
         <div class="history"></div>
+        <input type="text" id="newFormula" disabled />
         <input type="text" id="text" />
       </div>
       <div class="btnContainer">
-        <button type="button" class="btn btn-addtion">+</button>
-        <button type="button" class="btn btn-substraction">-</button>
-        <button type="button" class="btn btn-multiplication">*</button>
-        <button type="button" class="btn btn-division">/</button>
-        <button type="button" class="btn btn-equality">=</button>
-        <button type="button" class="btn btn-cos">cos</button>
-        <button type="button" class="btn btn-sin">sin</button>
-        <button type="button" class="btn btn-tg">tg</button>
-        <button type="button" class="btn btn-x2">x<sup>2</sup></button>
-        <button type="button" class="btn btn-xy">x<sup>y</sup></button>
-        <button type="button" class="btn btn-bracketLeft">(</button>
-        <button type="button" class="btn btn-bracketRight">)</button>
-        <button type="button" class="btn btn-dot">,</button>
-        <button type="button" class="btn btn-0">0</button>
-        <button type="button" class="btn btn-1">1</button>
-        <button type="button" class="btn btn-2">2</button>
-        <button type="button" class="btn btn-3">3</button>
-        <button type="button" class="btn btn-4">4</button>
-        <button type="button" class="btn btn-5">5</button>
-        <button type="button" class="btn btn-6">6</button>
-        <button type="button" class="btn btn-7">7</button>
-        <button type="button" class="btn btn-8">8</button>
-        <button type="button" class="btn btn-9">9</button>
+        <button type="button" onclick="btn-addtion()" class="btn btn-addtion">+</button>
+        <button type="button" onclick="btn-substraction()" class="btn btn-substraction">-</button>
+        <button type="button" onclick="btn-multiplication()" class="btn btn-multiplication">
+          *
+        </button>
+        <button type="button" onclick="btn_division()" class="btn btn-division">/</button>
+        <button type="button" onclick="btn_equality()" class="btn btn-equality">=</button>
+        <button type="button" onclick="btn_cos()" class="btn btn-cos">cos</button>
+        <button type="button" onclick="btn_sin()" class="btn btn-sin">sin</button>
+        <button type="button" onclick="btn_tg()" class="btn btn-tg">tg</button>
+        <button type="button" onclick="btn_x2()" class="btn btn-x2">x<sup>2</sup></button>
+        <button type="button" onclick="btn_xy()" class="btn btn-xy">x<sup>y</sup></button>
+        <button type="button" onclick="btn_bracketLeft()" class="btn btn-bracketLeft">(</button>
+        <button type="button" onclick="btn_bracketRight()" class="btn btn-bracketRight">)</button>
+        <button type="button" onclick="btn_dot()" class="btn btn-dot">,</button>
+        <button type="button" onclick="btn_0()" class="btn btn-0">0</button>
+        <button type="button" onclick="btn_1()" class="btn btn-1">1</button>
+        <button type="button" onclick="btn_2()" class="btn btn-2">2</button>
+        <button type="button" onclick="btn_3()" class="btn btn-3">3</button>
+        <button type="button" onclick="btn_4()" class="btn btn-4">4</button>
+        <button type="button" onclick="btn_5()" class="btn btn-5">5</button>
+        <button type="button" onclick="btn_6()" class="btn btn-6">6</button>
+        <button type="button" onclick="btn_7()" class="btn btn-7">7</button>
+        <button type="button" onclick="btn_8()" class="btn btn-8">8</button>
+        <button type="button" onclick="btn_9()" class="btn btn-9">9</button>
       </div>
     </div>
+    <script src="js/index.js"></script>
   </body>
 </html>
