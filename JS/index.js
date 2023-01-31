@@ -40,3 +40,13 @@ function btn_mathSymbol(el) {
     enterText_1(el);
   }
 }
+
+// Добавление скобок
+function btn_bracket(el) {
+  enterText(el);
+}
+
+function btn_equality() {
+  const formul = document.getElementById("newFormula").value;
+  let str = "2+2";
+}
