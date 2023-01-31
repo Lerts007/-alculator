@@ -12,10 +12,12 @@ function addStartFormul(el) {
   document.getElementById("newFormula").value = "0" + el;
 }
 
+// Добавление в строку с id='text' числа
 function btn_number(el) {
   enterText(el);
 }
 
+// Добавление в строку с id='text' разделитель целого числа
 function btn_dot() {
   const Text = document.getElementById("text").value;
   if (Text.includes(".", 0) !== true) {
@@ -26,13 +28,15 @@ function btn_dot() {
     document.getElementById("text").value = "0.";
   }
 }
-function btn_addtion() {
+
+//Добавление математических символов
+function btn_mathSymbol(el) {
   const Text = document.getElementById("text").value;
   if (Text[0] === undefined) {
-    addStartFormul("+");
+    addStartFormul(el);
   }
 
   if (Text[0] !== undefined) {
-    enterText_1("+");
+    enterText_1(el);
   }
 }
