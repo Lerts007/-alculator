@@ -48,5 +48,20 @@ function btn_bracket(el) {
 
 function btn_equality() {
   const formul = document.getElementById("newFormula").value;
-  let str = "2+2";
+  let f = [];
+  let str = "2+2*(10/2)";
+  let count = 0;
+
+  while (str.length > 0) {
+    if (!isNaN(str[0])) {
+      f[count] = parseFloat(str);
+    } else {
+      f[count] = str[0];
+    }
+
+    str = str.replace(f[count], "");
+    count++;
+  }
+
+  console.log(f);
 }
