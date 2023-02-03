@@ -1,12 +1,12 @@
 .btnContainer {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 50px);
   grid-template-areas:
-    "a1 a2 a3 a4 a5 a6"
-    "b1 b2 b3 b4 b5 b6"
-    "c1 c2 c3 c4 c5 c6"
-    "d1 d d d4 d5 d6";
+    "a1 a2 a3 a4 a5"
+    "b1 b2 b3 b4 b5"
+    "c1 c2 c3 c4 d5"
+    "d d d3 d4 d5";
 }
 
 .btn {
@@ -25,55 +25,39 @@
 }
 
 .btn-addtion {
-  grid-area: d5;
+  grid-area: d4;
+}
+
+.btn-division {
+  grid-area: b4;
 }
 
 .btn-substraction {
-  grid-area: c5;
+  grid-area: c4;
 }
 
 .btn-multiplication {
-  grid-area: b5;
+  grid-area: b4;
 }
 
 .btn-multiplication {
-  grid-area: a5;
+  grid-area: a4;
 }
 
 .btn-equality {
-  grid-area: d6;
+  grid-area: d5;
 }
 
-.btn-cos {
-  grid-area: b1;
+.btn-clear {
+  grid-area: a5;
 }
 
-.btn-sin {
-  grid-area: c1;
-}
-
-.btn-tg {
-  grid-area: d1;
-}
-
-.btn-x2 {
-  grid-area: b6;
-}
-
-.btn-xy {
-  grid-area: c6;
-}
-
-.btn-bracketRight {
-  grid-area: a6;
-}
-
-.btn-bracketLeft {
-  grid-area: a1;
+.btn-signChange {
+  grid-area: b5;
 }
 
 .btn-dot {
-  grid-area: d4;
+  grid-area: d3;
 }
 
 .btn-0 {
@@ -81,37 +65,37 @@
 }
 
 .btn-1 {
-  grid-area: c2;
+  grid-area: c1;
 }
 
 .btn-2 {
-  grid-area: c3;
+  grid-area: c2;
 }
 
 .btn-3 {
-  grid-area: c4;
+  grid-area: c3;
 }
 
 .btn-4 {
-  grid-area: b2;
+  grid-area: b1;
 }
 
 .btn-5 {
-  grid-area: b3;
+  grid-area: b2;
 }
 
 .btn-6 {
-  grid-area: b4;
+  grid-area: b3;
 }
 
 .btn-7 {
-  grid-area: a2;
+  grid-area: a1;
 }
 
 .btn-8 {
-  grid-area: a3;
+  grid-area: a2;
 }
 
 .btn-9 {
-  grid-area: a4;
+  grid-area: a3;
 }
