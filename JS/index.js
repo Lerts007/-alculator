@@ -12,20 +12,25 @@ function btn_number(el) {
     secondNumber = document.getElementById("text").value;
   }
 }
-function btn_mathSymbol(el) {
+
+//Добавление символа
+function btn_mathSymbol(el, el_th) {
   if (firstNumber === undefined) {
     firstNumber = 0;
   }
   document.getElementById("text").value = "";
   sign = el;
-  document.getElementById("text").value += sign;
+
+  let a = document.querySelectorAll(".btn_active");
+  a.forEach((item) => (item.style.background = "#0a1f32"));
+  el_th.style.background = "red";
 }
 
 // Добавление в строку с id='text' разделитель целого числа
 function btn_dot() {
   const Text = document.getElementById("text").value;
   if (Text.includes(".", 0) !== true) {
-    enterText(".");
+    document.getElementById("text").value += ".";
   }
 
   if (Text[0] === undefined) {
@@ -33,48 +38,15 @@ function btn_dot() {
   }
 }
 
+//Очистка данных
 function btn_clear() {
+  document.getElementById("text").value = "";
   firstNumber = undefined;
   secondNumber = undefined;
   sign = undefined;
 }
 
+//Подсчет значения
 function btn_equality() {
   console.log(firstNumber, sign, secondNumber);
 }
-
-//Добавление математических символов
-// function btn_mathSymbol(el) {
-//   const Text = document.getElementById("text").value;
-//   if (Text[0] === undefined) {
-//     addStartFormul(el);
-//   }
-
-//   if (Text[0] !== undefined) {
-//     enterText_1(el);
-//   }
-// }
-
-// function btn_equality() {
-//   const formul = document.getElementById("newFormula").value;
-//   let f = [];
-//   let str = "2.3+(2*(10/2))";
-//   let count = 0;
-
-//   while (str.length > 0) {
-//     if (!isNaN(str[0])) {
-//       f[count] = parseFloat(str);
-//     } else {
-//       f[count] = str[0];
-//     }
-
-//     str = str.replace(f[count], "");
-//     count++;
-//   }
-
-//   console.log(f);
-
-//   let indx = f.indexOf("(");
-
-//   while (indx != -1) {}
-// }
