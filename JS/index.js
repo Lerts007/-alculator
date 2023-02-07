@@ -1,15 +1,19 @@
 let firstNumber;
 let secondNumber;
 let sign;
+//Нужен для того, чтобы после нажатия равно нельзя было добавить значение к результату
+let finish = false;
 
 // Добавление в строку с id='text' числа
 function btn_number(el) {
-  document.getElementById("text").value += el;
-  if (sign === undefined) {
-    firstNumber = document.getElementById("text").value;
-  }
-  if (sign !== undefined) {
-    secondNumber = document.getElementById("text").value;
+  if (!finish || sign !== undefined) {
+    document.getElementById("text").value += el;
+    if (sign === undefined) {
+      firstNumber = document.getElementById("text").value;
+    }
+    if (sign !== undefined) {
+      secondNumber = document.getElementById("text").value;
+    }
   }
 }
 
@@ -45,6 +49,7 @@ function btn_dot() {
 function btn_clear() {
   color();
   document.getElementById("text").value = "";
+  finish = false;
   firstNumber = undefined;
   secondNumber = undefined;
   sign = undefined;
@@ -71,6 +76,12 @@ function btn_equality() {
       }
       break;
   }
+
   console.log(firstNumber, sign, secondNumber, "=", res);
+
+  finish = true;
+  sign = undefined;
+
   document.getElementById("text").value = res;
+  firstNumber = res;
 }
