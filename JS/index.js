@@ -21,9 +21,12 @@ function btn_mathSymbol(el, el_th) {
   document.getElementById("text").value = "";
   sign = el;
 
+  color();
+  el_th.style.background = "red";
+}
+function color() {
   let a = document.querySelectorAll(".btn_active");
   a.forEach((item) => (item.style.background = "#0a1f32"));
-  el_th.style.background = "red";
 }
 
 // Добавление в строку с id='text' разделитель целого числа
@@ -40,6 +43,7 @@ function btn_dot() {
 
 //Очистка данных
 function btn_clear() {
+  color();
   document.getElementById("text").value = "";
   firstNumber = undefined;
   secondNumber = undefined;
@@ -48,5 +52,25 @@ function btn_clear() {
 
 //Подсчет значения
 function btn_equality() {
-  console.log(firstNumber, sign, secondNumber);
+  let res;
+  switch (sign) {
+    case "+":
+      res = parseFloat(firstNumber) + parseFloat(secondNumber);
+      break;
+    case "-":
+      res = parseFloat(firstNumber) - parseFloat(secondNumber);
+      break;
+    case "*":
+      res = parseFloat(firstNumber) * parseFloat(secondNumber);
+      break;
+    case "/":
+      if (secondNumber !== "0") {
+        res = parseFloat(firstNumber) / parseFloat(secondNumber);
+      } else {
+        res = "Ошибка";
+      }
+      break;
+  }
+  console.log(firstNumber, sign, secondNumber, "=", res);
+  document.getElementById("text").value = res;
 }
