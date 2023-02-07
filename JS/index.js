@@ -45,6 +45,18 @@ function btn_dot() {
   }
 }
 
+//Смена знака
+function btn_signChange() {
+  if (sign === undefined) {
+    firstNumber = parseFloat(firstNumber) * -1;
+    document.getElementById("text").value = firstNumber;
+  }
+  if (sign !== undefined) {
+    secondNumber = parseFloat(secondNumber) * -1;
+    document.getElementById("text").value = secondNumber;
+  }
+}
+
 //Очистка данных
 function btn_clear() {
   color();
@@ -84,4 +96,6 @@ function btn_equality() {
 
   document.getElementById("text").value = res;
   firstNumber = res;
+
+  color();
 }
