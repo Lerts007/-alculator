@@ -6,7 +6,7 @@ let finish = false;
 
 // Добавление в строку с id='text' числа
 function btn_number(el) {
-  if (!finish || sign !== undefined) {
+  if ((!finish || sign !== undefined) && document.getElementById("text").value.length < 10) {
     document.getElementById("text").value += el;
     if (sign === undefined) {
       firstNumber = document.getElementById("text").value;
@@ -91,10 +91,26 @@ function btn_equality() {
 
   console.log(firstNumber, sign, secondNumber, "=", res);
 
+  console.log(typeof res);
+
   finish = true;
   sign = undefined;
 
+  if (res.toString().length <= 10) {
+    document.getElementById("text").value = res;
+  } else {
+    while (res.toString().length > 10) {
+      if (Number.isInteger(res)) {
+        document.getElementById("text").value = "Слишком большой результат";
+      } else {
+        if (res.toString().slice(0, res.toString().indexOf(".")).length <= 8 && ) {
+        }
+      }
+    }
+  }
+
   document.getElementById("text").value = res;
+
   firstNumber = res;
 
   color();
