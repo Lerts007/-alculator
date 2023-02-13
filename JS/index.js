@@ -3,16 +3,22 @@ let secondNumber;
 let sign;
 //Нужен для того, чтобы после нажатия равно нельзя было добавить значение к результату
 let finish = false;
+//список +-/*
+let a = document.querySelectorAll(".btn_active");
 
+// Ввод спомощью клавиатуры
 document.addEventListener("keydown", function (event) {
   if (parseInt(event.key) >= 0) {
     btn_number(parseInt(event.key));
   }
-  if (event.key === ".") {
+  if (event.key === "." || event.key === ",") {
     btn_dot();
   }
   if (event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/") {
-    btn_mathSymbol(event.key, el_th);
+    btn_mathSymbol(event.key);
+  }
+  if (event.key === "Enter") {
+    btn_equality();
   }
 });
 
@@ -30,7 +36,7 @@ function btn_number(el) {
 }
 
 //Добавление символа
-function btn_mathSymbol(el, el_th) {
+function btn_mathSymbol(el) {
   if (firstNumber === undefined) {
     firstNumber = 0;
   }
@@ -38,7 +44,12 @@ function btn_mathSymbol(el, el_th) {
   sign = el;
 
   color();
-  el_th.style.background = "red";
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i].firstChild.nodeValue == el) {
+      a[i].style.background = "red";
+    }
+  }
 }
 function color() {
   let a = document.querySelectorAll(".btn_active");
