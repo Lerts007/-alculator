@@ -4,9 +4,21 @@ let sign;
 //Нужен для того, чтобы после нажатия равно нельзя было добавить значение к результату
 let finish = false;
 
+document.addEventListener("keydown", function (event) {
+  if (parseInt(event.key) >= 0) {
+    btn_number(parseInt(event.key));
+  }
+  if (event.key === ".") {
+    btn_dot();
+  }
+  if (event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/") {
+    btn_mathSymbol(event.key, el_th);
+  }
+});
+
 // Добавление в строку с id='text' числа
 function btn_number(el) {
-  if ((!finish || sign !== undefined) && document.getElementById("text").value.length < 10) {
+  if ((!finish || sign !== undefined) && document.getElementById("text").value.length < 18) {
     document.getElementById("text").value += el;
     if (sign === undefined) {
       firstNumber = document.getElementById("text").value;
@@ -96,20 +108,23 @@ function btn_equality() {
   finish = true;
   sign = undefined;
 
-  if (res.toString().length <= 10) {
+  //Длинна целлой части
+  resLC = res.toString().slice(0, res.toString().indexOf(".")).length;
+
+  if (res.toString().length <= 18) {
     document.getElementById("text").value = res;
   } else {
-    while (res.toString().length > 10) {
-      if (Number.isInteger(res)) {
-        document.getElementById("text").value = "Слишком большой результат";
+    if (Number.isInteger(res) && res.toString().length > 18) {
+      document.getElementById("text").value = "Длинный результат";
+    } else {
+      if (resLC <= 16) {
+        // parseInt(res.toString()[res.toString().indexOf('.')+1]) < 5 )
+        res = Math.round(res * Math.pow(10, 18 - resLC)) / Math.pow(10, 18 - resLC);
       } else {
-        if (res.toString().slice(0, res.toString().indexOf(".")).length <= 8 && ) {
-        }
+        document.getElementById("text").value = "Длинный результат";
       }
     }
   }
-
-  document.getElementById("text").value = res;
 
   firstNumber = res;
 
