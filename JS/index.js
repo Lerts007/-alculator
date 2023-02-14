@@ -94,6 +94,9 @@ function btn_clear() {
 //Подсчет значения
 function btn_equality() {
   let res;
+  if (secondNumber === undefined) {
+    secondNumber = firstNumber;
+  }
   switch (sign) {
     case "+":
       res = parseFloat(firstNumber) + parseFloat(secondNumber);
@@ -114,8 +117,6 @@ function btn_equality() {
   }
 
   console.log(firstNumber, sign, secondNumber, "=", res);
-
-  console.log(typeof res);
 
   finish = true;
 
