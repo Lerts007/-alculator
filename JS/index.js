@@ -24,7 +24,7 @@ document.addEventListener("keydown", function (event) {
 
 // Добавление в строку с id='text' числа
 function btn_number(el) {
-  if ((!finish || sign !== undefined) && document.getElementById("text").value.length < 18) {
+  if (!finish && document.getElementById("text").value.length < 18) {
     document.getElementById("text").value += el;
     if (sign === undefined) {
       firstNumber = document.getElementById("text").value;
@@ -42,6 +42,7 @@ function btn_mathSymbol(el) {
   }
   document.getElementById("text").value = "";
   sign = el;
+  finish = false;
 
   color();
 
@@ -117,7 +118,6 @@ function btn_equality() {
   console.log(typeof res);
 
   finish = true;
-  sign = undefined;
 
   //Длинна целлой части
   resLC = res.toString().slice(0, res.toString().indexOf(".")).length;
